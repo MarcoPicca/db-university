@@ -30,8 +30,10 @@
 
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento:
 
-    SELECT `departments`.`name`, COUNT(*) FROM `departments` GROUP BY `departments`.`name`;
-    (non ci sono corsi in dipartimenti, o non ho capito cosa dovevo fare, ma almeno così richiama i nomi dei 12 dipartimenti)
+    SELECT `department_id`, COUNT(*)
+    FROM `degrees` 
+    GROUP BY `department_id`;
+    
 
 
 
@@ -84,7 +86,12 @@
 
 6. Selezionare tutti i corsi di laurea magistrale (38):
 
+    SELECT * 
+    FROM `degrees` 
+    WHERE `level` = 'magistrale';
 
+
+    
 7. Da quanti dipartimenti è composta l'università? (12):
 
     SELECT * 
